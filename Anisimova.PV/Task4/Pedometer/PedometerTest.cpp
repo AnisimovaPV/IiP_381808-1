@@ -29,7 +29,9 @@ int main()
 		P.AddPodschet(d, m, y, h1, min1, h2, min2, step);
 	}
 	//Menu
-	for (;;) 
+	bool flag = false;
+
+	while (flag==false)
 	{
 	    cout << "Menu:" << '\n' <<
 		"1. The starting date and time count" << '\n' <<
@@ -41,7 +43,6 @@ int main()
 		"7. Maximum number of steps for all observation " << '\n' <<
 		"0. Exit " << '\n';
 	
-		bool flag = false;
 		int var;
 		cin >> var;
 
@@ -93,7 +94,6 @@ int main()
 			break;
 		}
 		}
-		if (flag==true) break;
 	}
 	//zapis' v fail
 	ofstream os("Pedometer.txt");
@@ -103,6 +103,7 @@ int main()
 	//chtenie  faila
 	ifstream is("Pedometer.txt");
 	is >> P;
+	cout << P;
 	is.close();
 	return 0;
 }

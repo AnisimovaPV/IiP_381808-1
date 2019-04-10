@@ -21,14 +21,16 @@ class Pedometer
 	int *h2;
 	int *min2;
 	int *steps;
-	int size;
-	const int buf=20 ;
+
+	int size;                 //current memory size
+	int buf;                  //allocated memory size
+	const int bufDelta = 10;  //memory size if size>=buf
 
 public:
 	// Konstryktory--------------------------
-	Pedometer();                                 // default
-	Pedometer(int,int,int,int, int, int);        // initsializator1
-	Pedometer(const Pedometer &);                // ñopy	
+	Pedometer();                                                                // default
+	Pedometer(int _size, int _d1, int _m1, int _y1, int _H1, int _Min1);        // initsializator1
+	Pedometer(const Pedometer &);                                               // ñopy	
 	//Destryktor---------------------------
 	~Pedometer();
 
@@ -39,11 +41,11 @@ public:
 	int GetH1();
 	int GetMin1();
 	
-	void AddPodschet(int, int, int, int, int, int, int, int);    // add podschet
-	int GetInfPodschet(int, int, int, int, int, int, int);       // information about podschet
-	double AverStepsMonth(int);                                  // average steps month
-	double AverStepsAll();                                       // averege steps all
-	int	MaxStepsMonth(int) ;
+	void AddPodschet(int _d, int _m, int _y, int _h1, int _min1, int _h2, int _min2, int _steps);    // add podschet
+	int GetInfPodschet(int _d, int _m, int _y, int _h1, int _min1, int _h2, int _min2);              // information about podschet
+	double AverStepsMonth(int _m);                                                                   // average steps month
+	double AverStepsAll();                                                                           // averege steps all
+	int	MaxStepsMonth(int _m) ;
 	int MaxStepsAll();	
 
 	friend ostream & operator << (ostream & stream, const Pedometer &a);
