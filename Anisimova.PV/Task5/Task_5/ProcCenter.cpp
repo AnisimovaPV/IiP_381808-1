@@ -14,12 +14,12 @@ void ProcCenter::FindClientInTheDatabase(int  _NumberCard, string &_Name, string
 	{
 		if (NumberCard[i] == _NumberCard)
 		{
-			Name[i]=_Name ;
-			Surname[i]=_Surname  ;
-			Patronymic[i]=_Patronymic ;
-			Sum[i]=_Sum;
-			PIN[i]=_PIN;
-			IsBlock[i]=_IsBlock;
+			_Name = Name[i] ;
+			_Surname=Surname[i]  ;
+			_Patronymic=Patronymic[i] ;
+			_Sum=Sum[i];
+			_PIN=PIN[i];
+			_IsBlock=IsBlock[i];
 		}
 	}
 }

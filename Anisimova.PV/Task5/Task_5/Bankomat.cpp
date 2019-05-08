@@ -114,7 +114,7 @@ int Bankomat::GetSum(int sum)
 	PrCn->ChangeClientInfo(Sum1, NumberCard1);
 	ofstream os;
 	os.open("E:/github/IiP_381808-1/Anisimova.PV/Task5/Bank.txt");
-	os << PrCn;
+	os << *PrCn;
 	os.close();
 }
 
@@ -176,7 +176,7 @@ int Bankomat::BringInSum(int sum)
 	PrCn->ChangeClientInfo(Sum1, NumberCard1);
 	ofstream os;
 	os.open("E:/github/IiP_381808-1/Anisimova.PV/Task5/Bank.txt");
-	os << PrCn;
+	os << *PrCn;
 	os.close();
 }
 

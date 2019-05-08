@@ -23,7 +23,7 @@ int main()
 			cin >> PIN;
 		}
 		
-		if (B.CheckCardBlock() == 0) return 0;
+		if (B.CheckCardBlock() == 1) return 0;
 		
 		bool flag =true;
 		while (flag)
